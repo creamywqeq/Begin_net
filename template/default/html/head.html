@@ -1,0 +1,34 @@
+<div class="heanav">
+  <header id="header"> 
+    <a href="{pboot:sitedomain}" class="logo1"> 
+      <img src="{pboot:sitelogo}" class="logo1" alt="{pboot:pagetitle}">
+    </a>
+    <nav class="links">
+      <ul>
+        <li><a href="{pboot:sitedomain}" {pboot:if(0=='{sort:scode}')}class='active'{/pboot:if}>首页</a></li>
+        {pboot:nav num=10 parent=0}
+        <li><a href="[nav:link]" {pboot:if('[nav:scode]'=='{sort:tcode}')}class="active"{/pboot:if}>[nav:name]</a></li>
+        {/pboot:nav}
+      </ul>
+    </nav>
+    <nav class="main">
+      <ul>
+        <li class="search"><a class="fa-search" href="#search">Search</a>
+          <form action="{pboot:scaction}" method="get" role="search" id="search">
+            <input type="text" name="keyword" placeholder="输入内容回车搜索">
+          </form>
+        </li>
+        <li class="menu"><a class="fa-bars" href="#menu">Menu</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<style>
+  .logo1 img {
+    width: 50px;        /* 设置宽度为100px，您可以根据需求调整 */
+    height: 50px;       /* 设置高度与宽度相同，确保图片是正方形 */
+    border-radius: 15px; /* 圆角矩形，值越大，圆角越明显 */
+    object-fit: cover;
+  }
+</style>
